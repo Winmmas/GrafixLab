@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://Winmmas.github.io/GrafixLabs",
+  "homepage": "https://Winmmas.github.io/GrafixLab",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",

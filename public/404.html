@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirigiendo...</title>
+    <script type="text/javascript">
+      // Redirige todos los 404 a index.html para que Vite maneje las rutas de la SPA
+      var segment = 1; // Coincide con la profundidad de tu repositorio (/GrafixLabs/)
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + segment).join('/') + '/?p=/' +
+        l.pathname.slice(1).split('/').slice(segment).join('/') +
+        l.search + l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

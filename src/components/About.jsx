@@ -2,11 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, Clock, HeartHandshake, Sparkles, Check } from 'lucide-react';
 import { scrollToSection } from '../utils/scroll';
-import { useTheme } from '../context/ThemeContext';
 
 export default function About() {
-  const { currentTheme } = useTheme();
-
   const pillars = [
     {
       icon: Clock,
@@ -42,10 +39,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-theme-accent text-xs sm:text-sm font-bold tracking-wider uppercase bg-theme-accent/10 border border-theme-accent/20 px-3.5 py-1.5 rounded-full inline-block shadow-xs">
-              Nuestra Esencia
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-theme-text mt-4 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-theme-text mb-4">
               Quiénes Somos
             </h2>
             <p className="text-theme-muted text-base sm:text-lg leading-relaxed">

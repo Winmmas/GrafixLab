@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import { scrollToSection } from '../utils/scroll';
 
 export default function Footer() {
@@ -23,13 +23,13 @@ export default function Footer() {
           <button 
             onClick={(e) => scrollToSection('hero', e)}
             className="flex items-center gap-2.5 text-left cursor-pointer"
+            aria-label="GrafixLab, ir al inicio"
           >
-            <div className="w-9 h-9 rounded-xl bg-theme-accent flex items-center justify-center text-slate-950 font-bold shadow-md shadow-theme-accent/20">
-              <Zap className="w-5 h-5 fill-slate-950" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-theme-text">
-              Grafix<span className="text-theme-accent">Labs</span>
-            </span>
+            <img
+              src={`${import.meta.env.BASE_URL}GrafixLab.svg`}
+              alt="GrafixLab"
+              className="h-12 w-auto max-w-[150px] object-contain"
+            />
           </button>
 
           {/* Enlaces rápidos sin hash en URL */}

@@ -1,18 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageSquare, Phone, ArrowRight, ShieldCheck, Clock, Zap } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
 
 export default function ContactSection() {
-  const { theme } = useTheme();
-
-  const titleGradients = {
-    'cyber-tech': 'from-cyan-400 via-sky-300 to-emerald-400',
-    'energia-pura': 'from-sky-600 via-blue-600 to-orange-500',
-    'digital-premium': 'from-violet-400 via-purple-300 to-pink-400',
-  };
-  const activeGradient = titleGradients[theme] || titleGradients['cyber-tech'];
-
   return (
     <section id="contacto" className="py-20 md:py-28 bg-site-theme text-theme-text relative overflow-hidden transition-colors duration-300 border-t border-theme-borderSubtle">
       {/* Background ambient glows */}
@@ -35,7 +25,7 @@ export default function ContactSection() {
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4">
             ¿Listo para empezar? <br />
-            <span className={`text-transparent bg-clip-text bg-gradient-to-r ${activeGradient}`}>
+            <span className="text-theme-accent">
               Estamos a un mensaje de distancia
             </span>
           </h2>
@@ -56,11 +46,11 @@ export default function ContactSection() {
             className="card-site-theme rounded-3xl p-8 flex flex-col justify-between text-left shadow-xl hover:border-accent-theme transition-all duration-300"
           >
             <div>
-              <div className="w-14 h-14 rounded-2xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center font-bold mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-theme-accent/15 text-theme-accent flex items-center justify-center font-bold mb-6">
                 <MessageSquare className="w-7 h-7" />
               </div>
 
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+              <span className="text-xs font-bold uppercase tracking-wider text-theme-accent">
                 Canal Preferido
               </span>
               <h3 className="text-2xl font-bold text-theme-text mt-1 mb-2">

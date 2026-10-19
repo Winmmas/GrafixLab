@@ -36,10 +36,10 @@ export default function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
-        className="relative group w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-xl shadow-emerald-500/35 transition-colors"
+        className="btn-cta relative group w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-colors"
       >
         {/* Anillo de pulso animado */}
-        <span className="absolute -inset-1 rounded-full bg-emerald-400/40 animate-ping -z-10" />
+        <span className="absolute -inset-1 rounded-full bg-theme-accent/40 animate-ping -z-10" />
         
         <MessageCircle className="w-7 h-7 fill-white" />
       </motion.a>

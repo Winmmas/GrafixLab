@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-site-theme text-theme-text font-sans selection:bg-theme-accent selection:text-slate-950 relative transition-colors duration-300">
+      <div className="min-h-screen bg-site-theme text-theme-text font-sans selection:bg-theme-accent selection:text-theme-bg relative transition-colors duration-300">
         {/* Barra de Navegación Fija con selector integrado */}
         <Navbar />
 

@@ -17,19 +17,8 @@ import {
   Zap
 } from 'lucide-react';
 import { scrollToSection } from '../utils/scroll';
-import { useTheme } from '../context/ThemeContext';
 
 export default function Services({ onSelectService }) {
-  const { theme, currentTheme } = useTheme();
-
-  const titleGradients = {
-    'cyber-tech': 'from-cyan-400 via-sky-300 to-emerald-400',
-    'energia-pura': 'from-sky-600 via-blue-600 to-orange-500',
-    'digital-premium': 'from-violet-400 via-purple-300 to-pink-400',
-  };
-
-  const activeGradient = titleGradients[theme] || titleGradients['cyber-tech'];
-
   const packages = [
     {
       id: 'paquete-1',
@@ -141,7 +130,7 @@ export default function Services({ onSelectService }) {
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-theme-text tracking-tight mt-2 mb-4 leading-tight">
               Paquetes diseñados para{' '}
-              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${activeGradient}`}>
+              <span className="text-theme-accent">
                 hacer crecer tus ventas
               </span>
             </h2>
@@ -191,13 +180,13 @@ export default function Services({ onSelectService }) {
                   <motion.div 
                     animate={{ y: [0, -3, 0] }}
                     transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
-                    className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black text-xs sm:text-sm font-black px-4 py-1.5 rounded-full shadow-lg shadow-theme-accent/30 flex items-center gap-1.5 border border-white tracking-wide uppercase"
+                    className="absolute -top-4 left-1/2 -translate-x-1/2 bg-theme-accent text-white text-xs sm:text-sm font-black px-4 py-1.5 rounded-full shadow-lg shadow-theme-accent/30 flex items-center gap-1.5 border border-theme-accent tracking-wide uppercase"
                   >
                     <Star className="w-3.5 h-3.5 fill-theme-accent text-theme-accent" />
                     <span>El más recomendado</span>
                   </motion.div>
                 ) : pkg.badgeText ? (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-white border border-white text-black text-xs font-bold px-3.5 py-1 rounded-full shadow-md flex items-center gap-1">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-theme-card border border-theme-border text-theme-text text-xs font-bold px-3.5 py-1 rounded-full shadow-md flex items-center gap-1">
                     <span>{pkg.badgeText}</span>
                   </div>
                 ) : null}
@@ -303,9 +292,9 @@ export default function Services({ onSelectService }) {
                     href={`https://wa.me/523343351186?text=${encodeURIComponent(pkg.whatsappMsg)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition-colors"
+                    className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 text-theme-accent bg-theme-accent/10 hover:bg-theme-accent/20 border border-theme-accent/30 transition-colors"
                   >
-                    <MessageCircle className="w-4 h-4 text-emerald-400 fill-emerald-500/20" />
+                    <MessageCircle className="w-4 h-4 text-theme-accent fill-theme-accent/20" />
                     <span>Pedir directo por WhatsApp</span>
                   </motion.a>
                 </div>
@@ -343,7 +332,7 @@ export default function Services({ onSelectService }) {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-theme-accent/15 text-theme-accent flex items-center justify-center shrink-0">
               <MessageCircle className="w-5 h-5" />
             </div>
             <div>

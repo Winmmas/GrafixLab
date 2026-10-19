@@ -2,83 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* =========================================================
-   PALETAS Y MODOS DE DISEÑO (Cyber Tech, Energía Pura, Digital Premium)
-   ========================================================= */
-
-/* 1. Cyber Tech (Negro Carbón + Azul Neón + Verde Lima) - Recomendado */
 :root,
-[data-theme="cyber-tech"],
-html[data-theme="cyber-tech"] body {
-  --theme-bg: #0d0f12;
-  --theme-bg-subtle: #121826;
-  --theme-card: #151d2d;
-  --theme-card-hover: #1b263b;
-  --theme-border: rgba(0, 210, 255, 0.3);
-  --theme-border-subtle: rgba(255, 255, 255, 0.1);
-  --theme-text: #f8fafc;
-  --theme-muted: #94a3b8;
-  --theme-accent: #00d2ff;
-  --theme-accent-alt: #3b82f6;
-  --theme-cta: #10b981;
-  --theme-cta-hover: #059669;
-  --theme-cta-text: #022c22;
-  --theme-glow-accent: rgba(0, 210, 255, 0.25);
-  --theme-glow-cta: rgba(16, 185, 129, 0.45);
+[data-theme="grafixlabs"] {
+  --theme-bg: #070c19;
+  --theme-bg-subtle: #0c1224;
+  --theme-card: #44438e;
+  --theme-card-hover: #504fa1;
+  --theme-border: rgba(98, 101, 254, 0.55);
+  --theme-border-subtle: rgba(182, 187, 255, 0.16);
+  --theme-text: #b6bbff;
+  --theme-muted: #b6bbff;
+  --theme-accent: #6265fe;
+  --theme-accent-alt: #6265fe;
+  --theme-cta: #6265fe;
+  --theme-cta-hover: #777aff;
+  --theme-cta-text: #ffffff;
+  --theme-glow-accent: rgba(98, 101, 254, 0.2);
+  --theme-glow-cta: rgba(98, 101, 254, 0.4);
   color-scheme: dark;
 }
 
-/* 2. Energía Pura (Blanco / Light + Naranja Fuego + Azul Cian) */
-[data-theme="energia-pura"],
-html[data-theme="energia-pura"] body {
-  --theme-bg: #f8fafc;
-  --theme-bg-subtle: #ffffff;
-  --theme-card: #ffffff;
-  --theme-card-hover: #f1f5f9;
-  --theme-border: #e2e8f0;
-  --theme-border-subtle: #e2e8f0;
-  --theme-text: #0f172a;
-  --theme-muted: #475569;
-  --theme-accent: #0284c7;
-  --theme-accent-alt: #0369a1;
-  --theme-cta: #f97316;
-  --theme-cta-hover: #ea580c;
-  --theme-cta-text: #ffffff;
-  --theme-glow-accent: rgba(2, 132, 199, 0.18);
-  --theme-glow-cta: rgba(249, 115, 22, 0.4);
-  color-scheme: light;
-}
-
-/* 3. Digital Premium (Gris Noche + Morado Eléctrico + Magenta Neón) */
-[data-theme="digital-premium"],
-html[data-theme="digital-premium"] body {
-  --theme-bg: #0f172a;
-  --theme-bg-subtle: #141c33;
-  --theme-card: #18203c;
-  --theme-card-hover: #212c52;
-  --theme-border: rgba(139, 92, 246, 0.35);
-  --theme-border-subtle: rgba(255, 255, 255, 0.1);
-  --theme-text: #f8fafc;
-  --theme-muted: #94a3b8;
-  --theme-accent: #8b5cf6;
-  --theme-accent-alt: #a855f7;
-  --theme-cta: #ec4899;
-  --theme-cta-hover: #db2777;
-  --theme-cta-text: #ffffff;
-  --theme-glow-accent: rgba(139, 92, 246, 0.25);
-  --theme-glow-cta: rgba(236, 72, 153, 0.45);
-  color-scheme: dark;
-}
-
-/* Reglas base del documento */
-html, body {
+html,
+body {
   background-color: var(--theme-bg) !important;
   color: var(--theme-text) !important;
   transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100%;
 }
 
-/* Clases de Alta Prioridad para Botones de Acción (Afectados 100% por el modo) */
 .btn-cta {
   background-color: var(--theme-cta) !important;
   color: var(--theme-cta-text) !important;
@@ -94,7 +45,6 @@ html, body {
   transform: scale(0.98);
 }
 
-/* Botón Secundario */
 .btn-secondary {
   background-color: var(--theme-card) !important;
   color: var(--theme-text) !important;
@@ -107,7 +57,6 @@ html, body {
   color: var(--theme-accent) !important;
 }
 
-/* Fondos y Tarjetas */
 .bg-site-theme {
   background-color: var(--theme-bg) !important;
   color: var(--theme-text) !important;
@@ -122,7 +71,6 @@ html, body {
   color: var(--theme-text) !important;
 }
 
-/* Texto de Acento */
 .text-accent-theme {
   color: var(--theme-accent) !important;
 }
@@ -133,7 +81,6 @@ html, body {
   background-color: var(--theme-glow-accent) !important;
 }
 
-/* Custom scrollbar adaptado al tema */
 ::-webkit-scrollbar {
   width: 10px;
 }

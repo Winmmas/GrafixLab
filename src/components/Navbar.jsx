@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Menu, X, PhoneCall } from 'lucide-react';
+import { Menu, X, PhoneCall } from 'lucide-react';
 import { scrollToSection } from '../utils/scroll';
-import { useTheme } from '../context/ThemeContext';
-import ThemeSwitcher from './ThemeSwitcher';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { currentTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,9 +30,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? currentTheme.isDark
-            ? 'bg-theme-bg/90 backdrop-blur-md shadow-xl py-3 border-b border-theme-borderSubtle'
-            : 'bg-white/95 backdrop-blur-md shadow-sm py-3 border-b border-slate-200'
+          ? 'bg-theme-bg/90 backdrop-blur-md shadow-xl py-3 border-b border-theme-borderSubtle'
           : 'bg-transparent py-5'
       }`}
     >
@@ -45,13 +40,13 @@ export default function Navbar() {
           <button
             onClick={(e) => handleNavClick('hero', e)}
             className="flex items-center gap-2.5 group cursor-pointer text-left"
+            aria-label="GrafixLab, ir al inicio"
           >
-            <div className="w-10 h-10 rounded-xl bg-theme-accent flex items-center justify-center text-slate-950 shadow-md shadow-theme-accent/25 group-hover:scale-105 transition-transform font-bold">
-              <Zap className="w-5 h-5 fill-slate-950" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-theme-text">
-              Grafix<span className="text-theme-accent">Labs</span>
-            </span>
+            <img
+              src={`${import.meta.env.BASE_URL}GrafixLab.svg`}
+              alt="GrafixLab"
+              className="h-12 w-auto max-w-[150px] object-contain transition-transform group-hover:scale-105"
+            />
           </button>
 
           {/* Desktop Nav */}
@@ -67,10 +62,8 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop Controls (Selector de Paleta + CTA) */}
+          {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <ThemeSwitcher variant="navbar" />
-
             <button
               onClick={(e) => handleNavClick('contacto', e)}
               className="btn-cta inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-all cursor-pointer"
@@ -82,7 +75,6 @@ export default function Navbar() {
 
           {/* Mobile Right Controls */}
           <div className="flex items-center gap-2 md:hidden">
-            <ThemeSwitcher variant="navbar" />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-theme-text hover:bg-theme-card transition-colors cursor-pointer"
